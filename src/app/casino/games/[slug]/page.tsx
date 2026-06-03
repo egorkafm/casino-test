@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { GamePage } from "@/components/home/game-page";
+import { SEED_GAMES } from "@/mocks/data/games";
+
+export function generateStaticParams() {
+  return SEED_GAMES.map((game) => ({ slug: game.slug }));
+}
 
 export async function generateMetadata({
   params,
