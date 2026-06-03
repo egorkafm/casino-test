@@ -28,6 +28,9 @@ jobs:
       - run: npm ci
 
       - run: npm run build
+        env:
+          NEXT_PUBLIC_USE_MOCK: "true"
+          NEXT_PUBLIC_BASE_PATH: /casino-test
 
       - uses: actions/upload-pages-artifact@v3
         with:

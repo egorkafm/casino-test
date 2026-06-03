@@ -2,7 +2,9 @@ import { env } from "@/lib/env";
 
 const startOptions = {
   onUnhandledRequest: "warn" as const,
-  serviceWorker: { url: "/mockServiceWorker.js" },
+  serviceWorker: {
+    url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/mockServiceWorker.js`,
+  },
   quiet: false,
 };
 
